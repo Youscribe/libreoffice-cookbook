@@ -17,5 +17,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
-include_recipe "libreoffice::install"
+if platform?('windows')
+  include_recipe "libreoffice::windows"
+else
+  include_recipe "libreoffice::install"
+end

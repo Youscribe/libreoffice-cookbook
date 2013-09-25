@@ -1,9 +1,9 @@
 #
 # Cookbook Name:: libreoffice
-# Recipe:: install
-# Author:: Guilhem Lettron <guilhem.lettron@youscribe.com>
+# Recipe:: windows
+# Author:: Rilindo Foster <rilindo.foster@monzell.com>
 #
-# Copyright 2012, Societe Publica.
+# Copyright 2013, YouScribe.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -18,7 +18,9 @@
 # limitations under the License.
 #
 
-if platform?('ubuntu')
-  include_recipe "libreoffice::repo" if node['libreoffice']['repo']
+windows_package node['libreoffice']['windows']['package_name'] do
+  source node['libreoffice']['windows']['url']
+  checksum checksum if checksum
+  installer_type :msi
+  action :install
 end
-include_recipe "libreoffice::install_#{node['libreoffice']['install_method']}"
