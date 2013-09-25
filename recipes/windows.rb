@@ -20,7 +20,6 @@
 
 windows_package node['libreoffice']['windows']['package_name'] do
   source node['libreoffice']['windows']['url']
-  checksum checksum if checksum
   installer_type :msi
   action :install
 end
