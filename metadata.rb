@@ -11,3 +11,4 @@ depends          "chocolatey"
 
 supports         "ubuntu"
 supports         "windows"
+supports         "fedora"
