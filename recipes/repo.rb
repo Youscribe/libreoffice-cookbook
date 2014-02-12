@@ -19,6 +19,8 @@
 #
 chef_gem "versionomy"
 
+require 'versionomy'
+
 major_version = Versionomy.parse(node["libreoffice"]["version"]).major
 minor_version = Versionomy.parse(node["libreoffice"]["version"]).minor
 
