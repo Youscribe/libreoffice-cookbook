@@ -8,17 +8,27 @@ Requirements
 
 ## Platform:
 
-* Ubuntu
+* Ubuntu, Fedora, Windows
 
 ## Coobooks:
 
-* apt
+* apt, yum
 
 Attributes
 ==========
 
-See `attributes/default.rb` for default values.
+For Linux:
+- `default['libreoffice']['version']` = Default version, which is set to `4.0`.
+- `default['libreoffice']['repo']` = Boolean value for presence of repo. Defaults to `false`.
+- `default['libreoffice']['install_method']` = Installation method. Defaults to `package`.
+- `default['libreoffice']['upgrade']` = Boolean value to see if upgrade is necessary. Defaults to `false`.
 
+For Windows:
+
+- `default['libreoffice']['windows']['package_name']` = name of installer package. Defaults to `Libreoffice`.
+- `default['libreoffice']['windows']['url']` = URL to MSI installer. Defaults to `http://download.documentfoundation.org/libreoffice/stable/4.1.1/win/x86/LibreOffice_4.1.1_Win_x86.msi`
+  
+  
 Recipes
 =======
 
@@ -31,6 +41,7 @@ Usage
 =====
 
 Include `recipe[libreoffice]` on systems where you want to install libreoffice.
+
 
 License and Author
 ==================
@@ -50,3 +61,8 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
+
+Contributors
+==================
+
+Contributor:: Rilindo Foster
