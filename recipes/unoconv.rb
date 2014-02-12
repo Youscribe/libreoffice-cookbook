@@ -18,7 +18,7 @@
 # limitations under the License.
 #
 
-package "python-uno"
+package "libreoffice-script-provider-python"
 
 remote_file "unoconv" do
   path "/usr/local/bin/unoconv"
